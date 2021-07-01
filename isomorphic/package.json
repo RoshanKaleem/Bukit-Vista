@@ -65,6 +65,7 @@
     "react-tags": "^0.2.2",
     "react-test-renderer": "^16.7.0",
     "react-throttle": "^0.3.0",
+    "react-time-picker": "^4.3.0",
     "react-trend": "^1.2.3",
     "react-vis": "^1.11.5",
     "react-window-size-listener": "^1.2.3",

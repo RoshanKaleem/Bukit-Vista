@@ -2,44 +2,67 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import data from "../../languageProvider/locales/en_US.json";
 import DataFetching from "./datafetching";
+import { relativeTimeThreshold } from "moment";
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: "" };
-    this.state = { alert: "" };
-    this.state = { ready: "" };
+    this.state = {
+      username: "",
+      alert: "",
+      ready: "",
+    };
+    this.requestStatus = false;
   }
+
   myChangeHandler = (event) => {
-    this.setState({ username: event.target.value });
     var patt = new RegExp("/[^0-9a-zA-Z]/");
     let inputtext = event.target.value;
+
+    this.setState({ username: event.target.value });
     this.setState({ alert: "Should be combination of numbers & alphabets" });
 
     if (/[^0-9A-Z]/.test(inputtext)) {
-      this.setState({ alert: "Should be combination of numbers & alphabets" });
-      this.setState({ ready: "false" });
+      this.setState({
+        alert: "Should be combination of numbers & alphabets",
+        ready: "false",
+      });
     } else {
-      this.setState({ alert: " " });
-      this.setState({ ready: "true" });
+      this.setState({
+        alert: " ",
+        ready: "true",
+      });
     }
   };
+
   onFormSubmit = (e) => {
     const { username, alert, ready } = this.state;
     if (ready === "true") {
-      console.log(username);
+      this.requestStatus = true;
+      this.setState({ ready: "true" });
     }
     // send to server with e.g. `window.fetch`
   };
+
   handleKeypress = (e) => {
     //it triggers by pressing the enter key
-
     if (e.key === "Enter") {
       this.onFormSubmit();
     }
   };
 
+  // changeState = () => {
+
+
+  // };
+  
   render() {
+    const conditionalRender = () => {
+      if (this.requestStatus && this.state.username.length > 0) {
+        this.requestStatus = false;
+        return <DataFetching serach={this.state.username} />;
+      }
+    };
     return (
       <div class="">
         <div class="row ">
@@ -73,7 +96,11 @@ class Sidebar extends Component {
                 </div>
               </div>
 
-              <DataFetching serach="HIJ12346" />
+              {this.requestStatus && this.state.username.length > 0 ? (
+                <DataFetching serach={this.state.username} />
+              ) : null}
+              {(this.requestStatus = false)}
+
             </div>
           </div>
         </div>
