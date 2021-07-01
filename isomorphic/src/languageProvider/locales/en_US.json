@@ -636,5 +636,12 @@
   "topbar.logout": "Logout",
   "topbar.viewAll": "View All",
   "topbar.viewCart": "View Cart",
-  "topbar.totalPrice": "Total Price"
+  "topbar.totalPrice": "Total Price",
+  "prompttext": "Your booking code",
+  "menu": "Guest portal",
+  "text1": "Thank you for booking with Bukit Vista. Here are the details of your current booking",
+  "check_in_date":"Check in date:",
+  "check_out_date":"Check out date:",
+  "property_name":"Property name:",
+  "Arrivaltime":"Arrival time:"
 }
