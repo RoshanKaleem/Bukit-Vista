@@ -15,7 +15,7 @@ class Sidebar extends Component {
     this.requestStatus = false;
   }
 
-  myChangeHandler = (event) => {
+  myChangeHandler = (event) => {//verify input using Regex
     var patt = new RegExp("/[^0-9a-zA-Z]/");
     let inputtext = event.target.value;
 
@@ -35,26 +35,23 @@ class Sidebar extends Component {
     }
   };
 
-  onFormSubmit = (e) => {
+  onFormSubmit = (e) => { //Verifying that the input is correct => ready 
     const { username, alert, ready } = this.state;
     if (ready === "true") {
       this.requestStatus = true;
       this.setState({ ready: "true" });
     }
-    // send to server with e.g. `window.fetch`
+
   };
 
-  handleKeypress = (e) => {
-    //it triggers by pressing the enter key
+  handleKeypress = (e) => {//Submit form on pressing Enter
+    
     if (e.key === "Enter") {
       this.onFormSubmit();
     }
   };
 
-  // changeState = () => {
 
-
-  // };
   
   render() {
     const conditionalRender = () => {

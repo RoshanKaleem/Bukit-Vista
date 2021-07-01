@@ -643,5 +643,8 @@
   "check_in_date":"Check in date:",
   "check_out_date":"Check out date:",
   "property_name":"Property name:",
-  "Arrivaltime":"Arrival time:"
+  "Arrivaltime":"Arrival time:",
+  "thankyou":"Thankyou,your host has been informed about your arrival",
+  "input_correct":"Please input correct Code",
+  "set_time":"--:--(Please set your arrival time)"
 }
