@@ -18,9 +18,18 @@ https://bv-online-assessment.herokuapp.com/api
 
 ### (Page 1)
 
-![Screenshot (1)](images/ss1.png)
+![Screenshot (1)](images/ss1.PNG)
 
 
-### Carbon Emission Trend(Page 2)
+### (Page 2)
 
-![Screenshot (2)](https://user-images.githubusercontent.com/45168689/119236315-997b2f00-baeb-11eb-8948-25f28838c770.png)
+![Screenshot (2)](images/ss2.PNG)
+
+### (Page 3)
+
+![Screenshot (3)](images/ss3.PNG)
+
+### How to Run 
+* 1)Simply just clone the repo and start by doing npm install
+* 2)Npm start
+
